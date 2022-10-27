@@ -19,7 +19,7 @@ export default () => {
       <Suspense>
         <Routes>
           <Route path="/main" element={<PrimaryLazy history={history} />} />
-          <Route path="/main/*" element={<SecondaryLazy history={history} />} />
+          <Route path="/second" element={<SecondaryLazy history={history} />} />
           <Route path="/" element={<Navigate to="/main" />} />
         </Routes>
       </Suspense>

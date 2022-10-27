@@ -6,14 +6,21 @@ import {
   unstable_HistoryRouter as HistoryRouter,
 } from "react-router-dom";
 
-import Header from "./Header";
-
 export default ({ history }) => {
   return (
     <HistoryRouter history={history}>
-      <Header />
+      <div>
+        <h1>Main Application</h1>
+      </div>
       <Routes>
-        <Route path="/main" element={<Link to="/main/second">To Secondary App</Link>} />
+        <Route
+          path="/main"
+          element={
+            <Link to={{ pathname: "/second", search: "?data=main" }}>
+              To Secondary App
+            </Link>
+          }
+        />
       </Routes>
     </HistoryRouter>
   );
